@@ -12,3 +12,5 @@
 /runConfigurations.xml
 /vcs.xml
 ../JavaScript.iml
+../package-lock.json
+../package.json
