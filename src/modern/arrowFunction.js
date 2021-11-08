@@ -20,6 +20,13 @@ ask(
     () => alert( "취소" ),
 );
 
+ask(
+    "agree?",
+    () => confirm( "checking" ),
+    () => confirm( "no checked" ),
+)
+;
+
 // 이게 맞나...?
 // let askSol = ( question, yes, no ) => yes ? yes() : no();
 
