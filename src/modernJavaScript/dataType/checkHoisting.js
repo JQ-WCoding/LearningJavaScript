@@ -22,7 +22,10 @@ function add2( a = 0, b = 0, c = 0 ) {
 $.ajax( {
     method: 'POST',
     url: '/user',
-    data: { id: 1, name: 'LEE' },
+    data: {
+        id: 1,
+        name: 'LEE'
+    },
     cache: false
 } );
 
@@ -33,9 +36,9 @@ function changeValue( primitive, obj ) {
     obj.age += 10;
 }
 
-var num = 100; // 현재 primitive 형과 같이 정수형의 값은 함수 내부에서는 잠시 변경되지만 다시 외부에서는 그대로 100의 결과 값을 가지고 있다
+let num = 100; // 현재 primitive 형과 같이 정수형의 값은 함수 내부에서는 잠시 변경되지만 다시 외부에서는 그대로 100의 결과 값을 가지고 있다
 // 오브젝트의 참조주소가 변경되어 값이 바뀐 다른 주소를 참조하지만,
-var person = {
+let person = {
     name: 'LEE',
     age: 10
 };
@@ -43,6 +46,7 @@ var person = {
 console.log( num );
 console.log( person );
 
+// num 에 영향을 주지 않는다 -> 주소를 변경하는 것이 아니니까
 changeValue( num, person );
 
 console.log( num );
