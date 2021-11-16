@@ -92,3 +92,40 @@ function foo() {
 foo();
 
 console.log( x );
+
+let z = 1;
+
+function foo2() {
+    let z = 10;
+    bar2();
+}
+
+function bar2() {
+    console.log( z );
+}
+
+
+// 은닉화 -> private, protected, public 등이 없기 때문에
+// function 내부에 변수를 선언하여 private 과 같이 접근 불가능하도록 만든다
+// 이외에 메소드를 통해 값을 확인할 수 있다.
+const Counter = (function () {
+    let num = 0;
+
+    return {
+        increase() {
+            return ++num;
+        },
+        decrease() {
+            return --num;
+        }
+    };
+}());
+
+console.log( Counter.num );
+console.log( Counter.increase() );
+console.log( Counter.increase() );
+console.log( Counter.decrease() );
+console.log( Counter.decrease() );
+
+// let const 는 모두 호이스팅이 발생하지 않는 것 처럼 보이지만 사실 호이스팅이 되긴한다
+
