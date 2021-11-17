@@ -129,3 +129,29 @@ console.log( Counter.decrease() );
 
 // let const 는 모두 호이스팅이 발생하지 않는 것 처럼 보이지만 사실 호이스팅이 되긴한다
 
+const human = {
+    name: 'LEE'
+}
+human.age = 30;
+
+console.log( Object.getOwnPropertyDescriptors( human ) );
+
+const person1 = {
+    firstName: 'James',
+    lastName: 'Lee',
+
+    get fullName() {
+        return `${ this.firstName } ${ this.lastName }`;
+    },
+
+    set fullName( name ) {
+        [ this.firstName, this.lastName ] = name.split( ' ' );
+    }
+}
+
+console.log( person1.firstName + ' ' + person1.lastName );
+
+person1.fullName = 'Michael Kim';
+console.log( person1 );
+
+console.log( person1.fullName );
