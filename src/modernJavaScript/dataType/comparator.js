@@ -1,16 +1,21 @@
 /* 연산자 계산 우선 */
 let x = 5, result;
 
+// 먼저 result 에 값 초기화 후 x 증가
 result = x++;
+// 5, 6
 console.log( result, x );
-
+// x 값을 한번 증가하고 result 에 초기화
 result = ++x;
+// 7, 7
 console.log( result, x );
-
+// x 값을 result 에 초기화 후 감소
 result = x--;
+// 7, 6
 console.log( result, x );
-
+// x 값을 감소 시긴 값을 초기화
 result = --x;
+// 5, 5
 console.log( result, x );
 
 /* 타입 혼합에 따른 결과 출력 */
