@@ -50,3 +50,32 @@ funcEx();
 
 // 더하기 메소드 화살표 함수로 표현
 let adding = ( x, y ) => x + y;
+
+
+// 일급 객체
+const increase = function ( num ) {
+    return ++num;
+}
+
+const decrease = (num) => {
+  return --num;
+}
+
+const predicates = {increase,decrease};
+
+function makeCounter( predicate ) {
+    let num =0;
+
+    return function (  ){
+        num = predicate(num);
+        return num;
+    }
+}
+
+const increaser = makeCounter(predicates.increase);
+console.log(increaser());
+console.log(increaser());
+
+const decreaser = makeCounter(predicates.decrease);
+console.log(decreaser());
+console.log(decreaser());
