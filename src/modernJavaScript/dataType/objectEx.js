@@ -79,3 +79,25 @@ console.log(increaser());
 const decreaser = makeCounter(predicates.decrease);
 console.log(decreaser());
 console.log(decreaser());
+
+// 내부 객체 보는 방법
+function square(num){
+    return num * num;
+}
+console.dir(square);
+console.log(Object.getOwnPropertyDescriptor(square));
+
+
+// arguments
+function sum() {
+    let res = 0;
+
+    for ( let i = 0; i < arguments.length; i++ ) {
+        res += arguments[i];
+    }
+    return res;
+}
+// arguments 는 유사 배열 객체이다. 따라서, for 문 순회가 가능
+console.log(sum());
+console.log(sum(1,2));
+console.log(sum(1,2,3,));
