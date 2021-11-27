@@ -57,35 +57,36 @@ const increase = function ( num ) {
     return ++num;
 }
 
-const decrease = (num) => {
-  return --num;
+const decrease = ( num ) => {
+    return --num;
 }
 
-const predicates = {increase,decrease};
+const predicates = {increase, decrease};
 
 function makeCounter( predicate ) {
-    let num =0;
+    let num = 0;
 
-    return function (  ){
-        num = predicate(num);
+    return function () {
+        num = predicate( num );
         return num;
     }
 }
 
-const increaser = makeCounter(predicates.increase);
-console.log(increaser());
-console.log(increaser());
+const increaser = makeCounter( predicates.increase );
+console.log( increaser() );
+console.log( increaser() );
 
-const decreaser = makeCounter(predicates.decrease);
-console.log(decreaser());
-console.log(decreaser());
+const decreaser = makeCounter( predicates.decrease );
+console.log( decreaser() );
+console.log( decreaser() );
 
 // 내부 객체 보는 방법
-function square(num){
+function square( num ) {
     return num * num;
 }
-console.dir(square);
-console.log(Object.getOwnPropertyDescriptor(square));
+
+console.dir( square );
+console.log( Object.getOwnPropertyDescriptor( square ) );
 
 
 // arguments
@@ -97,7 +98,29 @@ function sum() {
     }
     return res;
 }
+
 // arguments 는 유사 배열 객체이다. 따라서, for 문 순회가 가능
-console.log(sum());
-console.log(sum(1,2));
-console.log(sum(1,2,3,));
+console.log( sum() );
+console.log( sum( 1, 2 ) );
+console.log( sum( 1, 2, 3, ) );
+
+// length 프로퍼티는 함수를 정의할 때 선언한 매개변수의 개수를 알려준다
+function fooo() {
+}
+
+console.log( fooo.length );
+
+function fooo2( x, y ) {
+    return x, y
+}
+
+console.log( fooo2.length );
+
+// name -> es6 이후 정식 표준
+var namedFunc = function foo() {
+};
+console.log( namedFunc.name ); // foo 가 출력
+
+var anonymousFunc = function () {
+};
+console.log( anonymousFunc.name ); // es5 : 빈 문자열을 값으로 가지지만, es6: 함수객첼ㄹ 가리키는 변수 이름을 값으로 가져 anonymousFunc 이 출력된다
