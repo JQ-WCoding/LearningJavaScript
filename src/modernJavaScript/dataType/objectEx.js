@@ -124,3 +124,4 @@ console.log( namedFunc.name ); // foo 가 출력
 var anonymousFunc = function () {
 };
 console.log( anonymousFunc.name ); // es5 : 빈 문자열을 값으로 가지지만, es6: 함수객첼ㄹ 가리키는 변수 이름을 값으로 가져 anonymousFunc 이 출력된다
+
