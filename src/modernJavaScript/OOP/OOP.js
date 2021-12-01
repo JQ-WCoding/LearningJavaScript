@@ -18,6 +18,7 @@ getArea 메서드를 하나만 생성하고 모두 공유하도록 하기
  */
 const circle1 = new Circle( 1 );
 const circle2 = new Circle( 2 );
+console.log(circle1.getArea() === circle2.getArea());
 
 // 프로토타입을 기반으로 바인딩
 function Circle2( radius ) {
